@@ -1,0 +1,40 @@
+{
+  "name": "deliverybot",
+  "version": "1.0.0",
+  "description": "telegram bot, that helps to deliver letters",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "pdf": "node src/service.pdf/index.js",
+    "telegram": "nodemon src/telegram/index.js",
+    "docker": "docker-compose up --build -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/ilnuribat/deliverybot"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "node",
+    "postgres",
+    "docker"
+  ],
+  "author": "ilnuribat",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "dotenv": "^5.0.1",
+    "koa": "^2.5.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "pretty": "^2.0.0",
+    "pug": "^2.0.3",
+    "puppeteer": "^1.2.0",
+    "telegraf": "^3.20.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0"
+  }
+}
