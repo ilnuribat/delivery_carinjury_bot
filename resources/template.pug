@@ -5,5 +5,5 @@ html
     p #{address}
     each img in images
       p
-        img(src=img)
+        img(src='data:image/png;base64,' + img)
       
