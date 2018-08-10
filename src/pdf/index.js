@@ -18,15 +18,11 @@ async function init() {
 
   base64Images = base64Images.map(i => Buffer.from(i).toString('base64'));
 
-  console.log(base64Images);
-
   const html = pretty(pug.renderFile('./resources/template.pug', {
     title: 'hi!',
     address: '',
     images: base64Images,
   }));
-
-  console.log(html);
 
   await page.setContent(html);
 
@@ -34,9 +30,9 @@ async function init() {
 
   await page.emulateMedia('screen');
 
-  await page.pdf({
-    path: './renderred.pdf',
-  });
+  const renderredPDF = await page.pdf();
+
+  await fs.writeFile('./renderred.pdf', renderredPDF);
 }
 
 module.exports = init;
